@@ -11,7 +11,7 @@ f = Fernet(os.getenv("ENCRYPTION_SECRET_KEY").encode())
 # f = Fernet("V5NPEhjhCvLOfnIr64OPdrcZAgcpuTWQOGVgiSQPbbs".encode()) 
 
 class MailSettings(EmbeddedDocument):
-    html = StringField()
+    html = StringField() 
     subject = StringField()
     email_from = StringField()
     smtp_host = StringField()
