@@ -1,0 +1,408 @@
+.paymentDetailsContainer {
+    min-height: 100vh;
+    background-color: #1a1d2e;
+
+    color: #ffffff;
+}
+.content {
+    padding: 2rem;
+}
+
+.header {
+    margin-bottom: 2rem;
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #2dd4bf;
+        margin: 0;
+    }
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tabButton {
+    background-color: #252936;
+    border: 2px solid rgba(45, 212, 191, 0.3);
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    color: #9ca3af;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: rgba(45, 212, 191, 0.1);
+        border-color: #2dd4bf;
+        color: #2dd4bf;
+    }
+
+    &.active {
+        background-color: #2dd4bf;
+        border-color: #2dd4bf;
+        color: #1a1d2e;
+        font-weight: 600;
+    }
+}
+
+.tableContainer {
+    padding: 2rem;
+    background-color: #252936;
+    border-radius: 12px;
+    border: 1px solid rgba(45, 212, 191, 0.2);
+}
+
+.tableWrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+
+    &::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(45, 212, 191, 0.3);
+        border-radius: 4px;
+
+        &:hover {
+            background: rgba(45, 212, 191, 0.5);
+        }
+    }
+}
+
+.tableTitle {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2dd4bf;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.totalCount {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #9ca3af;
+}
+
+.paymentTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 1000px;
+
+    thead {
+        tr {
+            background-color: rgba(45, 212, 191, 0.1);
+
+            th {
+                padding: 1rem 1.25rem;
+                text-align: left;
+                font-size: 0.75rem;
+                font-weight: 600;
+                color: #9ca3af;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                border-bottom: 2px solid rgba(45, 212, 191, 0.3);
+                white-space: nowrap;
+
+                &:first-child {
+                    border-top-left-radius: 8px;
+                }
+
+                &:last-child {
+                    border-top-right-radius: 8px;
+                }
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            background-color: rgba(255, 255, 255, 0.02);
+            transition: all 0.2s ease;
+
+            &:hover {
+                background-color: rgba(45, 212, 191, 0.05);
+            }
+
+            &:not(:last-child) {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            td {
+                padding: 1rem 1.25rem;
+                color: #e5e7eb;
+                font-size: 0.875rem;
+                vertical-align: middle;
+
+                &:first-child {
+                    color: #2dd4bf;
+                    font-weight: 600;
+                    font-family: "Courier New", monospace;
+                    font-size: 0.813rem;
+                }
+            }
+        }
+    }
+}
+
+.amount {
+    font-weight: 600;
+    color: #2dd4bf !important;
+    font-size: 1rem;
+}
+
+.paymentId,
+.orderId {
+    font-family: "Courier New", monospace;
+    font-size: 0.813rem;
+    color: #2dd4bf !important;
+    font-weight: 500;
+}
+
+.currency {
+    font-weight: 600;
+    color: #a78bfa !important;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+}
+
+.reason {
+    color: #ef4444 !important;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.statusCompleted {
+    display: inline-block;
+    padding: 0.375rem 0.875rem;
+    background-color: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 12px;
+    color: #22c55e;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+.statusFailed {
+    display: inline-block;
+    padding: 0.375rem 0.875rem;
+    background-color: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 12px;
+    color: #ef4444;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+// Responsive Design
+@media (max-width: 1024px) {
+    .paymentDetailsContainer {
+        padding: 1.5rem;
+    }
+
+    .header h1 {
+        font-size: 1.75rem;
+    }
+
+    .tableContainer {
+        padding: 1.5rem;
+    }
+
+    .buttonGroup {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .paymentDetailsContainer {
+        padding: 1rem;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .buttonGroup {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .tabButton {
+        width: 100%;
+        padding: 0.875rem 1.5rem;
+    }
+
+    .tableContainer {
+        padding: 1rem;
+    }
+
+    .tableTitle {
+        font-size: 1.25rem;
+    }
+
+    .paymentTable {
+        font-size: 0.813rem;
+
+        thead th,
+        tbody td {
+            padding: 0.75rem 1rem;
+        }
+    }
+
+    .tableWrapper {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.25rem;
+    }
+
+    .tableTitle {
+        font-size: 1.125rem;
+    }
+
+    .buttonGroup {
+        gap: 0.5rem;
+    }
+
+    .tabButton {
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    .amount {
+        font-size: 0.875rem;
+    }
+
+    .statusCompleted,
+    .statusFailed {
+        font-size: 0.688rem;
+        padding: 0.25rem 0.625rem;
+    }
+}
+
+// Loading, Error, and No Data states
+.loading,
+.error,
+.noData {
+    text-align: center;
+    padding: 3rem 1.25rem;
+    color: #9ca3af;
+    font-size: 1rem;
+}
+
+.loading {
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-left: 10px;
+        border: 3px solid rgba(45, 212, 191, 0.3);
+        border-top-color: #2dd4bf;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+        vertical-align: middle;
+    }
+}
+
+.error {
+    color: #ef4444;
+
+    p {
+        margin: 0 0 1rem 0;
+    }
+}
+
+.retryBtn {
+    background-color: rgba(45, 212, 191, 0.1);
+    border: 1px solid rgba(45, 212, 191, 0.3);
+    padding: 0.625rem 1.5rem;
+    border-radius: 8px;
+    color: #2dd4bf;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: #2dd4bf;
+        color: #1a1d2e;
+        border-color: #2dd4bf;
+    }
+}
+
+.noData {
+    font-style: italic;
+}
+
+// Pagination styles
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.paginationBtn {
+    background-color: rgba(45, 212, 191, 0.1);
+    border: 1px solid rgba(45, 212, 191, 0.3);
+    padding: 0.625rem 1.5rem;
+    border-radius: 8px;
+    color: #2dd4bf;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover:not(:disabled) {
+        background-color: #2dd4bf;
+        color: #1a1d2e;
+        border-color: #2dd4bf;
+        transform: translateY(-2px);
+    }
+
+    &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.1);
+        color: #6b7280;
+    }
+}
+
+.pageInfo {
+    color: #e5e7eb;
+    font-weight: 500;
+    font-size: 0.875rem;
+    min-width: 120px;
+    text-align: center;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

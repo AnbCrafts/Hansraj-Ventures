@@ -1,0 +1,54 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Environment variables
+.env
+
+# VS Code settings
+.vscode/
+
+# MacOS / Windows crap
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test output
+htmlcov/
+.coverage
+.cache
+
+# Pip dependency files
+pip-log.txt
+pip-delete-this-directory.txt
+
+# PyInstaller
+*.spec
+dist/
+build/
+
+# MyPy
+.mypy_cache/
+
+# Pytest
+.pytest_cache/
+
+structure.txt
+tree.txt
+test.py
+test.html
+
+ai-interview-service-account.json
+client_secret.json
+token.json
+.node_modules/

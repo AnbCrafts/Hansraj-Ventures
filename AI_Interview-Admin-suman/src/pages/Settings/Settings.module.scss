@@ -1,0 +1,479 @@
+.ManageUsers {
+    width: 100%;
+    height: 100%;
+    // border-radius: 1.875rem 1.875rem 0rem 0rem;
+    background: var(--bg1);
+    backdrop-filter: blur(25px);
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+
+    @supports (-moz-appearance: none) {
+        scrollbar-width: thin;
+        scrollbar-color: var(--lg3) transparent;
+    }
+
+    &::-webkit-scrollbar {
+        width: 0.3rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background: var(--lg3);
+    }
+
+    .Top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 5rem;
+        width: 100%;
+        padding: 2rem 0.5rem;
+
+        .Buttons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            button {
+                display: flex;
+                padding: 0rem 1.40769rem;
+                justify-content: center;
+                align-items: center;
+                gap: 0.46925rem;
+                border-radius: 9.38463rem;
+                background: var(--bg2);
+                color: var(--c14);
+                font-family: var(--f1);
+                font-size: 0.82113rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 2.34613rem; /* 285.714% */
+                text-transform: capitalize;
+                border: none;
+                cursor: pointer;
+
+                &.active {
+                    border-radius: 9.38463rem;
+                    background: var(--Buttons, linear-gradient(97deg, #00ffd1, #6c63ff));
+
+                    color: var(--c2);
+                }
+            }
+        }
+
+        .SaveButton {
+            display: flex;
+            padding: 0rem 1.40769rem;
+            justify-content: center;
+            align-items: center;
+            gap: 0.46925rem;
+            border-radius: 9.38463rem;
+
+            font-family: var(--f1);
+            font-size: 0.82113rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 2.34613rem; /* 285.714% */
+            text-transform: capitalize;
+            border: none;
+            cursor: pointer;
+
+            border-radius: 9.38463rem;
+            background: var(--Buttons, linear-gradient(97deg, #00ffd1, #6c63ff));
+
+            color: var(--c2);
+        }
+
+        .Filters {
+            display: flex;
+            padding: 0.51238rem 1.02475rem;
+            justify-content: center;
+            align-items: center;
+            gap: 0.6405rem;
+            border-radius: 0.25619rem;
+            background: var(--c15);
+            p {
+                color: var(--c11);
+                font-family: var(--f1);
+                font-size: 0.89669rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 140%; /* 1.25531rem */
+            }
+            svg {
+                width: 1.02475rem;
+                height: 1.02475rem;
+            }
+        }
+    }
+
+    .Bottom {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row: 1fr;
+        align-items: stretch;
+        padding-right: 1rem;
+        gap: 1rem;
+        h2 {
+            color: var(--c2);
+            margin-bottom: 1rem;
+        }
+        .Button {
+            width: fit-content;
+            display: flex;
+            padding: 0.5rem 1rem;
+            justify-content: center;
+            align-items: center;
+            gap: 0.46925rem;
+            border-radius: 9.38463rem;
+            background: var(--bg2);
+            color: var(--c2);
+            font-family: var(--f1);
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 400;
+
+            text-transform: capitalize;
+            border: none;
+            cursor: pointer;
+            background: var(--Buttons, linear-gradient(97deg, #00ffd1, #6c63ff));
+            transition: all 0.3s;
+            &:hover {
+                transform: scale(0.97);
+            }
+            &:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+        }
+        .SkillsWrapper {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            align-items: start;
+            justify-content: start;
+            gap: 0.5rem;
+            // margin-bottom: 1rem;
+            flex-wrap: wrap;
+            width: 100%;
+            // max-height: 19rem;
+            overflow-y: scroll;
+            background: var(--bg2);
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            @supports (-moz-appearance: none) {
+                scrollbar-width: thin;
+                scrollbar-color: var(--lg3) transparent;
+            }
+
+            &::-webkit-scrollbar {
+                width: 0.3rem;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border-radius: 1rem;
+                background: var(--lg3);
+            }
+
+            .Input {
+                width: 100%;
+                border: 1px solid var(--c3);
+                border-radius: 0.5rem;
+                outline: none;
+                padding: 0.5rem;
+                background: transparent;
+                color: var(--c3);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                input {
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    background: transparent;
+                    color: var(--c3);
+                }
+                h4 {
+                    text-wrap: nowrap;
+                    padding: 0 1rem;
+                }
+
+                button {
+                    background: transparent;
+                    border: none;
+                    cursor: pointer;
+                    color: var(--c3);
+                    font-size: 0.9rem;
+                    &:hover {
+                        color: var(--c4);
+                    }
+                }
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    transform: scale(1.02);
+                    border: 1px solid var(--c23);
+                }
+            }
+        }
+
+        .InputWrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: start;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            label {
+                width: 13rem;
+                color: var(--c16);
+                font-family: var(--f1);
+                font-size: 0.875rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.25rem; /* 142.857% */
+            }
+
+            .Input {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                border: 1px solid var(--c3);
+                border-radius: 0.5rem;
+                outline: none;
+                padding: 0.5rem;
+                background: transparent;
+                color: var(--c3);
+
+                input {
+                    width: 100%;
+                    border: none;
+
+                    outline: none;
+
+                    background: transparent;
+                    color: var(--c3);
+                }
+            }
+        } // ... existing styles ...
+
+        .InstructionBox {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: var(--bg1); // Light yellow warning background
+            border: 1px solid #5e5240;
+            border-radius: 8px;
+
+            h4 {
+                margin: 0 0 8px 0;
+                font-size: 16px;
+                color: #e65100;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            p {
+                font-size: 14px;
+                color: #555;
+                margin-bottom: 12px;
+                line-height: 1.5;
+            }
+
+            .TagsContainer {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .Tag {
+                background-color: #ffffff;
+                border: 1px solid #ccc;
+                padding: 6px 12px;
+                border-radius: 4px;
+                font-family: monospace;
+                font-size: 13px;
+                font-weight: 600;
+                color: #333;
+                cursor: pointer;
+                transition: all 0.2s ease;
+
+                &:hover {
+                    background-color: var(--c11);
+                    color: white;
+                    border-color: #d4d4d4;
+                    transform: translateY(-2px);
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                }
+
+                &:active {
+                    transform: translateY(0);
+                }
+            }
+        }
+        .CheckboxGroup {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+
+            input[type="checkbox"] {
+                width: 1rem;
+                height: 1rem;
+                accent-color: var(--c23);
+                cursor: pointer;
+            }
+
+            label {
+                color: var(--c2);
+                font-family: var(--f1);
+                font-size: 1rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.25rem; /* 125% */
+                cursor: pointer;
+            }
+        }
+        .AudioWrapper {
+            display: grid;
+            grid-template-columns: 0.3fr 1fr;
+            // grid-column: span 2;
+            gap: 0.5rem;
+            row-gap: 0.5rem;
+            align-items: center;
+            h4 {
+                color: var(--c2);
+                font-family: var(--f1);
+                font-size: 1.2rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.25rem;
+                text-align: center;
+                margin-bottom: 0.5rem;
+            }
+
+            audio {
+                width: 100%;
+                margin-bottom: 0.5rem;
+                // margin-right: 1.5rem;
+            }
+        }
+        .SkillItem {
+            display: grid;
+            grid-template-columns: 1fr 0.2fr 0.1fr;
+            gap: 0.3rem;
+
+            .DeleteButton {
+                cursor: pointer;
+                color: var(--c3);
+                transition: all 0.3s ease-in-out;
+                // height: 1rem;
+                &:hover {
+                    color: var(--c4);
+                    transform: scale(1.1);
+                }
+            }
+        }
+        .Container {
+            padding: 1.5rem 1rem;
+            border-radius: 1rem;
+            background: var(--bg2);
+            .Buttons {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1rem;
+                margin-bottom: 1rem;
+                .InputWrapper {
+                    margin-bottom: 0;
+                    width: 100%;
+                }
+                .Questions {
+                    width: 5rem;
+                }
+            }
+        }
+        // ... (Keep all your code above this) ...
+
+        .MailContent {
+            grid-column: span 2;
+            color: var(--c2);
+
+            // 1. FIX FOR QUILL TOOLTIP OVERFLOW
+            // This ensures the link popup isn't cut off
+            .QuillEditor {
+                :global {
+                    .ql-container {
+                        overflow: visible !important;
+                    }
+                    .ql-tooltip {
+                        left: 0 !important;
+                        z-index: 9999 !important;
+                        position: absolute !important;
+                    }
+                }
+            }
+
+            // 2. STYLES FOR THE INSTRUCTION BOX
+            .InstructionBox {
+                margin-top: 20px;
+                padding: 15px;
+                // Using your variable for background, or use a specific hex if you want it distinct
+                background: var(--bg2); 
+                border: 1px solid var(--c3);
+                border-radius: 8px;
+            
+                h4 {
+                    margin: 0 0 8px 0;
+                    font-size: 16px;
+                    color: var(--c4); // Using a highlight color variable
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+            
+                p {
+                    font-size: 14px;
+                    color: var(--c3);
+                    margin-bottom: 12px;
+                    line-height: 1.5;
+                }
+            
+                .TagsContainer {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                }
+            
+                .Tag {
+                    background-color: transparent;
+                    border: 1px solid var(--c3);
+                    padding: 6px 12px;
+                    border-radius: 4px;
+                    font-family: monospace;
+                    font-size: 13px;
+                    font-weight: 600;
+                    color: var(--c2);
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+            
+                    &:hover {
+                        background-color: var(--c4);
+                        color: var(--bg1);
+                        border-color: var(--c4);
+                        transform: translateY(-2px);
+                    }
+                    
+                    &:active {
+                        transform: translateY(0);
+                    }
+                }
+            }
+        }
+        
+        .Skills {
+            grid-row: span 2;
+        }
+    }
+}

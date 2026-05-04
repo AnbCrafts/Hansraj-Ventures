@@ -1,0 +1,195 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    color-scheme: dark;
+    background-color: #111;
+}
+
+html,
+body {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    max-width: 500px;
+    padding-inline: 2rem;
+}
+
+.header > img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+}
+
+.header > h2 {
+    font-family: "TWK Everett", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 144%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+footer {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    background-color: var(--lk-bg);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+footer a,
+h2 a {
+    color: #ff6352;
+    text-decoration-color: #a33529;
+    text-underline-offset: 0.125em;
+}
+
+footer a:hover,
+h2 a {
+    text-decoration-color: #ff6352;
+}
+
+h2 a {
+    text-decoration: none;
+}
+
+/* Timer styles for Video component */
+.timerContainer {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 180px;
+    z-index: 1200;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.timer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.08), rgba(6, 182, 212, 0.04));
+    color: #e6eef7;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.timer .timerLabel {
+    font-size: 12px;
+    color: #9ca3af;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+}
+
+.timer .timerValue {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+    font-weight: 700;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.timer.low {
+    background: linear-gradient(90deg, rgba(239, 68, 68, 0.12), rgba(239, 68, 68, 0.06));
+    border-color: rgba(239, 68, 68, 0.2);
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        box-shadow: 0 6px 18px rgba(239, 68, 68, 0.08);
+        transform: translateY(0);
+    }
+    to {
+        box-shadow: 0 12px 30px rgba(239, 68, 68, 0.14);
+        transform: translateY(-1px);
+    }
+}
+
+.timerBar {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.timerFill {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981, #06b6d4);
+    width: 100%;
+    transition: width 0.4s ease;
+}
+
+@media (max-width: 640px) {
+    .timerContainer {
+        right: 12px;
+        left: 12px;
+        width: auto;
+    }
+    .timer {
+        padding: 8px 10px;
+    }
+    .timer .timerValue {
+        font-size: 14px;
+    }
+}
+
+/* Ping box */
+.pingBox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.statusDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #6b7280;
+    flex: 0 0 10px;
+}
+
+.statusDot.ok {
+    background: #10b981;
+    box-shadow: 0 0 6px rgba(16, 185, 129, 0.25);
+}
+.statusDot.error {
+    background: #ef4444;
+    box-shadow: 0 0 6px rgba(239, 68, 68, 0.25);
+}
+
+.pingText {
+    color: #cbd5e1;
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 220px;
+}
+
+@media (max-width: 420px) {
+    .pingText {
+        max-width: 120px;
+        font-size: 12px;
+    }
+}

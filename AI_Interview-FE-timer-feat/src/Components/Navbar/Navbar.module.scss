@@ -1,0 +1,214 @@
+.navbar {
+    background: #000000;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: sticky !important;
+    top: 0;
+    z-index: 100; // Added from previous version
+
+    .left {
+        height: 5rem;
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    /* --- Desktop Navigation (Hidden on mobile) --- */
+    .desktopNav {
+        display: flex;
+        align-items: center; // Added from previous version
+        gap: 2rem; // Added from previous version
+
+        /* Hide on mobile */
+        @media (max-width: 900px) {
+            display: none;
+        }
+
+        .middle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            a {
+                text-decoration: none;
+                color: var(--c5);
+                font-size: var(--h10a);
+                cursor: pointer; // Added from previous version
+                transition: color 0.2s ease; // Added from previous version
+
+                &:hover {
+                    // Added from previous version
+                    color: var(--c38, #0084ff);
+                }
+                &.active {
+                    color: var(--c38, #0084ff); // Add active state
+                }
+            }
+        }
+        .right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            button {
+                padding: 1rem;
+                border-radius: 0.5rem;
+                background: transparent;
+                border: none;
+                color: var(--c5);
+                font-size: var(--h10);
+                font-weight: 600;
+                cursor: pointer;
+            }
+
+            .getStarted {
+                background: var(--btn);
+                color: #000000;
+            }
+
+            //logged in user section
+            .userSection {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .profileImage {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid #ccc;
+                cursor: pointer; // Added from previous version
+            }
+
+            .logoutButton {
+                padding: 6px 12px;
+                background-color: #ff4d4f;
+                color: #fff;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 14px;
+                transition: background 0.3s;
+
+                &:hover {
+                    background-color: #ff7875;
+                }
+            }
+        }
+    }
+
+    /* --- Mobile Navigation (Hamburger Menu) --- */
+    .hamburgerIcon {
+        display: none; // Hidden by default
+        cursor: pointer;
+        z-index: 1002; // Must be on top of the menu overlay
+        color: var(--c5); // Use navbar link color
+
+        /* Show on mobile */
+        @media (max-width: 900px) {
+            display: block;
+        }
+    }
+
+    .mobileMenu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #000; // Match navbar bg
+        z-index: 1001; // Below the hamburger icon but above page content
+
+        // Use flex to center the content vertically
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+
+        // Animation for opening
+        animation: fadeIn 0.3s ease-in-out;
+
+        // --- STYLING FOR NAV MENUS ---
+        .mobileMenuLinks {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+
+            // Target all links inside
+            a {
+                text-decoration: none;
+                color: var(--c5); // Use the same color as desktop
+                font-size: 1.75rem; // Make them large for tapping
+                font-weight: 600;
+                padding: 0.5rem 1rem;
+                transition: color 0.2s ease;
+
+                &:hover {
+                    color: var(--c38, #0084ff); // Add hover effect
+                }
+                &.active {
+                    color: var(--c38, #0084ff); // Add active state
+                }
+            }
+        }
+
+        .mobileMenuAuth {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            width: 100%; // Ensure auth buttons can be full-width
+
+            // Target all buttons inside
+            button {
+                font-size: 1.5rem; // Make buttons large
+                padding: 0.75rem 1.5rem;
+                min-width: 200px; // Give them a consistent width
+                text-align: center;
+            }
+
+            // Stack user items vertically
+            .userSection {
+                // flex-direction: row;
+                div {
+                    display: flex;
+                    // flex-direction: row !important;
+                    gap: 1.5rem;
+
+                    .profileImage {
+                        margin: 0 auto;
+                        margin-bottom: 3rem;
+                        width: 8rem; // Make profile image larger
+                        height: 8rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    // This media query from your code is no longer needed,
+    // as .desktopNav handles hiding everything.
+    // @media screen and (max-width: 900px) {
+    //     .middle {
+    //         display: none;
+    //     }
+    // }
+}

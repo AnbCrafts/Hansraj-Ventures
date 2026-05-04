@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "DM Sans", sans-serif;
+	scroll-behavior: smooth;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type="month"]::-webkit-calendar-picker-indicator,
+input[type="week"]::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+	filter: invert(1);
+	cursor: pointer;
+}
+/* Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-text-fill-color: #aaa9b7 !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+
+.Toastify {
+	position: absolute;
+	z-index: 99999;
+	font-size: 16px;
+}
+
+:root {
+	--f1: "Poppins", sans-serif;
+	--f2: "Michroma", sans-serif;
+	--f3: "DM Sans", sans-serif;
+	--f4: "Josefin Sans", sans-serif;
+	--f5: "Inter", sans-serif;
+	--f6: "Public Sans", sans-serif;
+
+	--Assigned-Jobs: #8b8c91;
+	--c1: #101010;
+	--c2: #fff;
+	--c3: #aaa9b7;
+	--c4: #ff5a65;
+	--c5: #14ca74;
+	--c6: #a0aec0;
+	--c7: #e3e8f3;
+	--c8: #e6e5e6;
+	--c9: #1dbf73;
+	--c10: #999;
+	--c11: #666;
+	--c12: #8f8f8f;
+	--c13: #8b8c91;
+	--c14: #393939;
+	--c15: #15151b;
+	--c16: #dbdbdb;
+	--c17: #d7d7d7;
+	--c18: #626c70;
+	--c19: #0cae61;
+	--c20: #959fa3;
+	--c21: #959595;
+	--c22: #818688;
+	--c23: #6C63FF;
+	--c24: #dbdbdb;
+	--c25: #a73131;
+	--c26: #d0d0d0;
+	--c27: #2f80ed;
+	--c28: rgba(255, 255, 255, 0.7);
+	--c29: #666666;
+	--c30: #f1f5f9;
+
+	--btn: linear-gradient(97deg,  #00FFD1  , #6C63FF ),
+
+	--bg1: rgba(255, 255, 255, 0.02);
+	--bg2: rgba(255, 255, 255, 0.03);
+	--bg3: rgba(255, 255, 255, 0.32);
+	--bg4: rgba(5, 193, 104, 0.1);
+	--bg5: rgba(255, 90, 101, 0.2);
+	--bg6: rgba(20, 20, 20, 0.05);
+	--bg7: rgba(0, 0, 0, 0.03);
+	--bg8: rgba(29, 191, 115, 0.09);
+	--bg9: rgba(17, 38, 146, 0.05);
+	--bg10: rgba(245, 246, 247, 0.02);
+	--bg11: rgba(229, 231, 232, 0.02);
+	--bg12: rgba(253, 0, 0, 0);
+	--bg13: rgba(217, 217, 217, 0.2);
+	--bg14: rgba(245, 246, 247, 0.05);
+	--bg15: rgba(137, 137, 137, 0.2);
+	--bg16: rgba(137, 137, 137, 0.2);
+	--bg17: rgba(240, 246, 255, 0.05);
+	--bg18: rgba(0, 0, 0, 0.51);
+	--bg19: rgba(25, 25, 25, 0.8);
+	--bg20: rgba(229, 231, 232, 0);
+	--bg21: rgba(99, 99, 99, 0.4);
+	--bg22: rgba(217, 217, 217, 0.02);
+	--bg23: rgba(215, 215, 215, 0.3);
+
+	--b22: rgba(217, 217, 217, 0.02);
+
+	--lg2: linear-gradient(97deg, #00ffd049 9.79%, #6b63ff57 236.98%);
+
+	--lg3: linear-gradient(97deg, rgba(0, 170, 255, 0.481) 9.79%, rgba(255, 255, 255, 0.5) 236.98%);
+
+	--lg4: linear-gradient(97deg, rgba(0, 194, 220, 0.5) 9.79%, rgba(255, 255, 255, 0.5) 236.98%);
+
+	--lg5: linear-gradient(97deg, rgba(254, 100, 112, 0.5) 9.79%, rgba(255, 255, 255, 0.5) 236.98%);
+	--lg6: linear-gradient(97deg, rgba(255, 160, 17, 0.5) 9.79%, rgba(255, 255, 255, 0.5) 236.98%);
+	--lg7: linear-gradient(97deg,  #00FFD1  ,#6C63FF), linear-gradient(106deg, #ff6f44 9.31%, #fe4fa0 91.66%);
+
+	--Base_Font_Size: 100%;
+	font-size: var(--Base_Font_Size);
+}
+
+html {
+	width: 100%;
+	min-height: 100vh;
+	background: var(--c2);
+
+	&::-webkit-scrollbar {
+		width: 0.4rem;
+		display: none;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: var(--bg1);
+		border-radius: 1rem;
+	}
+}
+
+.headroom-wrapper {
+	position: relative;
+	z-index: 100;
+}
+
+.UserWrapper {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	z-index: 1;
+
+	&::after {
+		content: "";
+		position: fixed;
+		bottom: 15rem;
+		right: -5rem;
+		width: 70.142rem;
+		height: 33.61669rem;
+		transform: rotate(20.091deg);
+		border-radius: 70.142rem;
+		background: var(--b13);
+		filter: blur(150px);
+		z-index: -1;
+		// background: #f00;
+	}
+}
+
+// 850px switch mobile view
+
+@media screen and (max-width: 1728px) {
+	:root {
+		--Base_Font_Size: 90%;
+	}
+}
+
+@media screen and (max-width: 1600px) {
+	:root {
+		--Base_Font_Size: 85%;
+	}
+}
+
+@media screen and (max-width: 1500px) {
+	:root {
+		--Base_Font_Size: 80%;
+	}
+}
+
+@media screen and (max-width: 1400px) {
+	:root {
+		--Base_Font_Size: 75%;
+	}
+}
+
+@media screen and (max-width: 1350px) {
+	:root {
+		--Base_Font_Size: 70%;
+	}
+}
+
+@media screen and (max-width: 1250px) {
+	:root {
+		--Base_Font_Size: 65%;
+	}
+}
+
+@media screen and (max-width: 1150px) {
+	:root {
+		--Base_Font_Size: 60%;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	:root {
+		--Base_Font_Size: 55%;
+	}
+}
+
+@media screen and (max-width: 410px) {
+	:root {
+		--Base_Font_Size: 50%;
+	}
+}
+
+@media screen and (max-width: 335px) {
+	:root {
+		--Base_Font_Size: 45%;
+	}
+}
+
+@media screen and (max-width: 300px) {
+	:root {
+		--Base_Font_Size: 30%;
+	}
+}

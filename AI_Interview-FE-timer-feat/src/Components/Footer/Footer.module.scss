@@ -1,0 +1,111 @@
+.container {
+    background: #0a0a0a;
+    .footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding: 4rem 10rem;
+        gap: 3rem;
+
+        .Links {
+            h2 {
+                width: fit-content;
+                background: linear-gradient(90deg, #00ffd1, #6c63ff);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            a {
+                text-decoration: none;
+                font-size: var(--h10);
+                color: var(--c3);
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+
+            .contact {
+                margin-top: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                gap: 1rem;
+                font-size: var(--h10);
+                color: var(--c3);
+                .icon {
+                    width: fit-content;
+                    padding: 0.8rem;
+                    border-radius: 0.7rem;
+                    font-size: var(--h8);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: var(--btn);
+                }
+            }
+
+            &:nth-child(2) {
+                h2 {
+                    width: fit-content;
+                    background: linear-gradient(90deg, #6c63ff, #ec4899);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+            &:nth-child(3) {
+                h2 {
+                    width: fit-content;
+                    background: linear-gradient(90deg, #ec4899, #ff6b35);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+        }
+        .info {
+            .logo {
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+            p {
+                margin-top: 1rem;
+                font-size: var(--h10);
+                color: var(--c3);
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            padding: 2rem;
+            gap: 1rem;
+            .Links{
+                .contact{
+                        .icon{
+                            padding: 0.5rem;
+                            img{
+                                width: 1rem;
+                            }
+                        }
+                }
+            }
+        }
+    }
+
+    hr {
+        width: 80%;
+        height: 1px;
+        border: none;
+        background: var(--c3);
+        display: flex;
+        margin: auto;
+    }
+    .copyright {
+        padding: 2rem 10rem;
+        text-align: center;
+        font-size: var(--h10);
+        color: var(--c3);
+    }
+}

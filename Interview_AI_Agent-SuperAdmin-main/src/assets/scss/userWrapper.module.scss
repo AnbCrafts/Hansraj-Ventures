@@ -1,0 +1,83 @@
+.Wrapper {
+	height: 100vh;
+	width: 100vw;
+	max-height: 100vh;
+	background: var(--c1);
+	overflow: hidden;
+	position: relative;
+	display: flex;
+
+	.Sidebar {
+		height: 100vh;
+		width: 25rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 2rem 2rem;
+		z-index: 2;
+	}
+
+	.Content {
+		width: 80%;
+		height: 100%;
+		padding: 3rem 2rem 1rem 0rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		z-index: 2;
+
+		.Top {
+			height: max-content;
+		}
+
+		.MainContent {
+			flex: 1;
+			overflow: hidden;
+			overflow-y: scroll;
+
+			@supports (-moz-appearance: none) {
+				scrollbar-width: thin;
+				scrollbar-color: var(--c38) transparent;
+			}
+
+			&::-webkit-scrollbar {
+				width: 0.3rem;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				border-radius: 1rem;
+				background: var(--c38);
+			}
+		}
+	}
+
+	.Circle1,
+	.Circle2,
+	.Circle3,
+	.Circle4 {
+		position: absolute;
+		width: 28.875rem;
+		height: 28.875rem;
+		border-radius: 28.875rem;
+		background: var(--lg2);
+		filter: blur(70px);
+		z-index: 1;
+	}
+
+	.Circle1 {
+		left: -10rem;
+		top: -11rem;
+	}
+	.Circle2 {
+		right: -17rem;
+		top: -16rem;
+	}
+	.Circle3 {
+		left: -13rem;
+		bottom: 1rem;
+	}
+	.Circle4 {
+		right: -12rem;
+		bottom: 6rem;
+	}
+}

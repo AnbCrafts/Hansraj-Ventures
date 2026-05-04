@@ -1,0 +1,37 @@
+# General
+*.pyc
+*.pyo
+*.log
+*.sqlite3
+__pycache__/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# IDE/editor files
+.vscode/
+.idea/
+*.iml
+
+# Env/config
+.env
+*.env
+
+# Frontend (not needed in backend build)
+frontend/
+frontend
+
+venv/
+venv
+
+dev.sh
+dev.bat
+
+# Cache / OS metadata
+*.bak
+*.tmp
+*.old

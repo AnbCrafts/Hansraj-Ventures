@@ -1,0 +1,527 @@
+/* Using a dark, modern color palette */
+:root {
+    --primary-bg: #1e1e2f;
+    --secondary-bg: #27293d;
+    --input-bg: #3a3a4a;
+    --text-primary: #ffffff;
+    --text-secondary: #a9a9b3;
+    --accent-color: #00f5d4;
+    --accent-hover: #00d9bc;
+    --border-color: #4a4a5a;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.popup {
+    border-radius: 1rem;
+    background: #13131e;
+    width: 50%;
+    height: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 1.8rem 3.5rem;
+
+    @media screen and (max-width: 900px) {
+        width: 100%;
+        margin: 0 2rem;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 2fr 1fr ;
+        gap: 2rem;
+        .profile {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .id {
+                font-size: 0.7rem;
+                color: #929292;
+            }
+        }
+        .Box {
+            padding: 2rem;
+            border-radius: 1rem;
+            h1 {
+                font-size: 1.2rem;
+                margin-bottom: 0.5rem;
+                text-align: center;
+            }
+            .value {
+                text-align: center;
+                color: #00ffd1;
+            }
+            background: #000000;
+            box-shadow: 0 0px 6px #00ffd1;
+        }
+    }
+
+    .divider {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin: 1.8rem 0;
+        color: var(--text-secondary);
+
+        .line {
+            flex-grow: 1;
+            border: none;
+            border-top: 1px solid var(--border-color);
+        }
+    }
+
+    .tabs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        button {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            font-weight: 600;
+
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s, color 0.3s;
+
+            &:hover {
+                background-color: var(--secondary-bg);
+                color: #ffffff;
+            }
+        }
+    }
+
+    .Skills {
+        font-family: sans-serif;
+        background: transparent;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        max-width: 500px;
+        margin: auto;
+        .title {
+            color: #cbd5e1; /* Light gray */
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+        .formContainer {
+            position: relative;
+            display: flex;
+            align-items: center;
+            .input {
+                width: 100%;
+                background-color: #334155; /* Lighter blue-gray */
+                border: 2px solid var(--accent-color); /* Light blue border */
+                color: #f1f5f9; /* Off-white text */
+                border-radius: 9999px; /* Fully rounded */
+                padding: 0.75rem 3rem 0.75rem 1rem;
+                font-size: 1rem;
+                outline: none;
+            }
+            .addButton {
+                position: absolute;
+                right: 0.5rem;
+                background: transparent;
+                border: 2px solid var(--accent-color);
+                border-radius: 50%;
+                width: 2rem;
+                height: 2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                color: var(--text-primary);
+            }
+        }
+        .skillsGrid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            .skillTag {
+                display: flex;
+                align-items: center;
+                background-color: #475569; /* Gray for tags */
+                color: #e2e8f0;
+                padding: 0.5rem 0.75rem;
+                border-radius: 9999px;
+                font-size: 0.875rem;
+            }
+            .removeButton {
+                margin-left: 0.5rem;
+                background-color: transparent;
+                border: none;
+                color: #94a3b8;
+                cursor: pointer;
+                padding: 0;
+                line-height: 1;
+            }
+        }
+    }
+
+    /* --- Main Dashboard Container --- */
+    .Activity {
+        font-family: sans-serif;
+        background: transparent;
+        color: #e2e8f0;
+        // padding: 2rem;
+        border-radius: 1.5rem;
+        display: flex;
+        // display: grid;
+        // grid-template-columns: 1fr 1.5fr;
+        gap: 2.5rem;
+        max-width: 900px;
+        margin: auto;
+        @media screen and (max-width: 900px) {
+            flex-direction: column;
+            align-items: center;
+            .column {
+                width: 100% !important;
+            }
+        }
+
+        /* --- General Column Layout --- */
+        .column {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 1rem 0;
+        }
+
+        /* --- Activity List (Left Column) --- */
+        .activityList {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+
+            .activityItem {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                .statusDot {
+                    width: 0.7rem;
+                    height: 0.7rem;
+                    border-radius: 50%;
+                    flex-shrink: 0;
+                }
+
+                .activityText {
+                    margin: 0;
+                    font-size: 1rem;
+                    font-weight: 500;
+                }
+
+                .activityDate {
+                    margin: 0.25rem 0 0;
+                    font-size: 0.875rem;
+                    color: #94a3b8;
+                }
+            }
+        }
+
+        /* --- Charts Grid (Right Column) --- */
+        .chartsGrid {
+            display: flex;
+            justify-content: space-around;
+            gap: 1rem;
+
+            .chartContainer {
+                text-align: center;
+
+                .chartWrapper {
+                    position: relative;
+                    width: 100px;
+                    height: 100px;
+                    margin: 0 auto;
+
+                    .chartText {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                    }
+                }
+
+                .chartLabel {
+                    margin-top: 0.75rem;
+                    color: #94a3b8;
+                    font-size: 0.875rem;
+                }
+            }
+        }
+
+        /* --- Stats Container (Right Column) --- */
+        .statsContainer {
+            margin-top: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .statCard {
+                background: var(--primary-bg);
+                padding: 1rem 1.5rem;
+                border-radius: 0.75rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border: 1px solid var(--accent-color);
+
+                .statusDot {
+                    width: 0.7rem;
+                    height: 0.7rem;
+                    border-radius: 50%;
+                    flex-shrink: 0;
+                }
+
+                .statLabel {
+                    margin: 0;
+                    font-size: 1rem;
+                    font-weight: 500;
+                }
+
+                .statValue {
+                    margin: 0;
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .Overview {
+        font-family: sans-serif;
+        background: transparent;
+        // padding: 2rem;
+        border-radius: 1.5rem;
+        display: flex;
+        justify-content: center;
+
+        // grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        max-width: 700px;
+        margin: auto;
+        @media screen and (max-width: 900px) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .leftColumn {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+
+            .card {
+                background-color: var(--input-bg);
+                padding: 1.25rem;
+                border-radius: 1rem;
+                border: 1px solid #00e0c6;
+
+                .cardTitle {
+                    margin: 0 0 1rem 0;
+                    color: #cbd5e1;
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                }
+            }
+
+            .profileDetails {
+                margin-bottom: 1.5rem; /* Assumed spacing */
+
+                .detailItem {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    color: #cbd5e1;
+                    margin-bottom: 0.75rem;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .skillsGrid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+
+                .skillTag {
+                    display: flex;
+                    align-items: center;
+                    background-color: #475569;
+                    color: #e2e8f0;
+                    padding: 0.4rem 0.6rem;
+                    border-radius: 0.5rem;
+                    font-size: 0.8rem;
+
+                    .removeButton {
+                        margin-left: 0.5rem;
+                        background: none;
+                        border: none;
+                        color: #94a3b8;
+                        cursor: pointer;
+                        font-size: 1rem;
+                        line-height: 1;
+                    }
+                }
+            }
+        }
+
+        .rightColumn {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .progressContainer {
+                text-align: center;
+
+                .chartWrapper {
+                    position: relative;
+                    width: 180px;
+                    height: 180px;
+
+                    .chartText {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        color: #00e0c6;
+                        font-size: 2.5rem;
+                        font-weight: bold;
+                    }
+                }
+
+                .chartLabel {
+                    margin-top: 1rem;
+                    color: #00e0c6;
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+
+    /* Style for the new forms */
+    .updateForm {
+        width: 100%;
+        margin-bottom: 2rem;
+        /* Use the light border color from your table */
+        border-bottom: 1px solid var(--bg15, #eee);
+        padding-bottom: 1.5rem;
+
+        &:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+    }
+
+    /* A wrapper for label + input */
+    .formGroup {
+        width: 100%;
+        margin-bottom: 1rem;
+
+        label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            /* Use the heading text color and font */
+            color:  #dcdcdc;
+            font-family: var(--f1);
+        }
+
+        /* * Since you are reusing the .input class from Skills, 
+     * these styles will theme it to match your table inputs.
+     */
+        .input {
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 8px;
+            padding: 0.75rem;
+            font-size: 0.95rem;
+            /* Use the main body text color and font */
+            color:  #cfcfcf;
+            font-family: var(--f1);
+            /* Use the table's bg and border colors */
+            // background: var(--bg14, #f9f9f9);
+            border: 1px solid  #3e3e3e;
+
+            &::placeholder {
+                /* Use the secondary text color for the placeholder */
+                color: var(--c3, #888);
+            }
+
+            &:focus {
+                outline: none;
+                border-color: #131313; /* Highlight with primary color */
+                box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2);
+            }
+        }
+    }
+
+    /* A general-purpose save button, themed */
+    .saveButton {
+        /* Use the primary color from your bar chart */
+        background-color: #00ffd1;
+        color: rgb(13, 13, 13);
+        padding: 0.75rem 1rem;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 0.5rem;
+        font-family: var(--f1); /* Use main font */
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: #00c6a2; /* A darker shade */
+        }
+
+        &:disabled {
+            /* Use the table header bg for disabled state */
+            background-color: #00a184;
+            color: var(--c3, #d1d1d1);
+            cursor: not-allowed;
+        }
+    }
+
+    /* For success/error messages */
+    .successMessage {
+        color: green;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+        font-family: var(--f1);
+    }
+
+    .errorMessage {
+        color: red;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+        font-family: var(--f1);
+    }
+}

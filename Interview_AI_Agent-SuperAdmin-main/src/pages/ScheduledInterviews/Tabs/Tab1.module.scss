@@ -1,0 +1,185 @@
+.Header {
+    width: 100%;
+    height: 2.25rem;
+    opacity: 0.7;
+    background: var(--bg14);
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding-right: 0.5rem;
+
+    p {
+        display: block;
+        color: var(--c24);
+        font-family: var(--f1);
+        font-size: 0.85rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%; /* 0.75rem */
+        text-transform: uppercase;
+        text-align: center;
+        overflow: hidden;
+
+        &:nth-child(1) {
+            flex: 0.3;
+        }
+        &:nth-child(2) {
+            flex: 1.2;
+        }
+        &:nth-child(3) {
+            flex: 1.5;
+        }
+        &:nth-child(4) {
+            flex: 1;
+        }
+        &:nth-child(5) {
+            flex: 1;
+        }
+        &:nth-child(6) {
+            flex: 1;
+        }
+        &:nth-child(7) {
+            flex: 0.5;
+        }
+
+        &:nth-child(8) {
+            flex: 1;
+        }
+    }
+}
+
+.noData {
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 2rem;
+}
+
+.Body {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    padding-right: 0.5rem;
+
+    @supports (-moz-appearance: none) {
+        scrollbar-width: thin;
+        scrollbar-color: var(--c23) transparent;
+    }
+
+    &::-webkit-scrollbar {
+        width: 0.3rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background: var(--c23);
+    }
+
+    .Box {
+        width: 100%;
+        padding: 1.3rem 0;
+        border-bottom: 1px solid rgba(137, 137, 137, 0.1);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        transition: background 0.5s;
+        &:hover {
+            background: var(--c14);
+        }
+
+        .Item {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.68rem;
+
+            &:nth-child(1) {
+                flex: 0.3;
+            }
+            &:nth-child(2) {
+                flex: 1.2;
+            }
+            &:nth-child(3) {
+                flex: 1.5;
+            }
+            &:nth-child(4) {
+                flex: 1;
+            }
+            &:nth-child(5) {
+                flex: 1;
+            }
+            &:nth-child(6) {
+                flex: 1;
+            }
+            &:nth-child(7) {
+                flex: 0.5;
+            }
+            &:nth-child(8) {
+                flex: 1;
+            }
+
+            p {
+                width: 100%;
+                text-align: center;
+                color: var(--c24);
+                font-family: var(--f1);
+                font-size: 0.875rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.25rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        // .More is now inside .Item for Action column
+        .More {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            span {
+                display: flex;
+                width: 2.5rem;
+                height: 2.5rem;
+                padding: 0.5rem;
+                justify-content: center;
+                align-items: center;
+                border-radius: 4.875rem;
+                background: var(--bg16);
+            }
+            .Options {
+                position: absolute;
+                z-index: 100;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: fit-content;
+                border-radius: 0.5rem;
+                background: var(--bg16);
+                position: absolute;
+                top: auto;
+                right: 2.6rem;
+                //gap: 0.5rem;
+                overflow: hidden;
+                button {
+                    border: none;
+                    background: none;
+                    color: white;
+                    padding: 0.5rem 1rem;
+                    cursor: pointer;
+                    width: 100%;
+                    &:hover {
+                        background: var(--bg15);
+                    }
+                }
+            }
+        }
+    }
+}

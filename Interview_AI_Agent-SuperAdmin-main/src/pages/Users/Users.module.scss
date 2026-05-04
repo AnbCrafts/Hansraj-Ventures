@@ -1,0 +1,486 @@
+// --- Overview Stats ---
+.OverviewStats {
+    width: 100%;
+    
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .StatsGrid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 2rem;
+        width: 100%;
+        background: var(--bg2);
+        border-radius: 1.5rem;
+        padding: 2rem 1rem;
+        div {
+            background: var(--bg14);
+            border-radius: 1rem;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h4 {
+                color: var(--c3);
+                font-family: var(--f1);
+                font-size: 1rem;
+                font-weight: 500;
+                margin-bottom: 0.5rem;
+            }
+            p {
+                color: var(--c2);
+                font-family: var(--f1);
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+// --- Payment Status Chart ---
+.PaymentStatusChart {
+    width: 100%;
+    background: var(--bg2);
+    border-radius: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    h3 {
+        color: var(--c2);
+        font-family: var(--f1);
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+}
+
+// --- Top Users Table ---
+.TopUsersSection {
+    width: 100%;
+    background: var(--bg2);
+    border-radius: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    h3 {
+        color: var(--c2);
+        font-family: var(--f1);
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    .TopUsersTable {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        background: var(--bg14);
+        border-radius: 1rem;
+        overflow: hidden;
+        
+        /* This is the most important part */
+        table-layout: fixed;
+
+        thead {
+            background: var(--bg10);
+            tr {
+                th {
+                    color: var(--c3);
+                    font-family: var(--f1);
+                    font-size: 1rem;
+                    font-weight: 600;
+                    padding: 1rem 0.5rem;
+                    text-align: left;
+                }
+            }
+        }
+        tbody {
+            tr {
+                &:nth-child(even) {
+                    background: var(--bg2);
+                }
+                td {
+                    color: var(--c16);
+                    font-family: var(--f1);
+                    font-size: 0.95rem;
+                    font-weight: 400;
+                    padding: 0.8rem 0.5rem;
+                    border-bottom: 1px solid var(--bg15);
+
+                    /* --- MODIFIED --- */
+                    /* Set default overflow behavior for variable columns */
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+
+        /* --- ADD ALL NEW COLUMN STYLES --- */
+
+        /* Tiny column for "S no" */
+        .colSNo {
+            width: 60px; /* Fixed pixel width */
+            text-align: center;
+        }
+
+        /* Fixed-width columns for numbers */
+        .colNumeric {
+            width: 110px; /* Fixed pixel width */
+            text-align: right;
+            padding-right: 1rem; // Looks better for numbers
+            text-align: center;
+        }
+        
+        /* Fixed-width columns for dates/phone */
+        .colDate {
+            width: 160px; /* Fixed pixel width */
+            text-align: center;
+        }
+        .colPhone {
+             width: 130px; /* Fixed pixel width */
+        }
+        
+        /* --- Variable Width Columns --- */
+        
+        /* "Name" will get remaining space but will truncate */
+        .colName {
+            /* No width set, let it be variable */
+            /* It already has ellipsis from the default td rule */
+        }
+
+        /* "Email" will get remaining space and will WRAP */
+        .colEmail {
+            /* No width set, let it be variable */
+            
+            /* --- FIX for "email cut off" --- */
+            /* This will wrap the email and break long strings */
+            white-space: normal;
+            word-break: break-all; 
+        }
+    }
+}
+.ManageUsers {
+    width: 100%;
+    height: 100%;
+    // border-radius: 1.875rem 1.875rem 0rem 0rem;
+    background: var(--bg1);
+    backdrop-filter: blur(25px);
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    scrollbar-width: none;
+
+    .Top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 5rem;
+        width: 100%;
+        padding: 0 2rem;
+
+        h3{
+            color: var(--c2);
+            font-family: var(--f1);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .Buttons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            button {
+                display: flex;
+                padding: 0rem 1.40769rem;
+                justify-content: center;
+                align-items: center;
+                gap: 0.46925rem;
+                border-radius: 9.38463rem;
+                background: var(--bg2);
+                color: var(--c14);
+                font-family: var(--f1);
+                font-size: 0.82113rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 2.34613rem; /* 285.714% */
+                text-transform: capitalize;
+                border: none;
+                cursor: pointer;
+
+                &.active {
+                    border-radius: 9.38463rem;
+                    background: var(--Buttons, linear-gradient(97deg, #00ffd1, #6c63ff));
+
+                    color: var(--c2);
+                }
+            }
+        }
+
+        .Filters {
+            display: flex;
+            padding: 0.51238rem 1.02475rem;
+            justify-content: center;
+            align-items: center;
+            gap: 0.6405rem;
+            border-radius: 0.25619rem;
+            background: var(--c15);
+            p {
+                color: var(--c11);
+                font-family: var(--f1);
+                font-size: 0.89669rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 140%; /* 1.25531rem */
+            }
+            svg {
+                width: 1.02475rem;
+                height: 1.02475rem;
+            }
+        }
+    }
+
+    .Bottom {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        // overflow: hidden;
+
+        .subHeading {
+            width: 100%;
+            height: 3rem;
+            opacity: 0.8;
+            background: var(--bg14);
+            display: flex;
+            align-items: center;
+            padding-left: 1rem;
+
+            p {
+                color: var(--c16);
+                font-family: var(--f1);
+                font-size: 0.75rem;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 100%; /* 0.75rem */
+                text-transform: uppercase;
+                text-align: center;
+
+                &:nth-child(1) {
+                    flex: 0.2;
+                }
+                &:nth-child(2) {
+                    flex: 1.5;
+                }
+                &:nth-child(3) {
+                    flex: 0.6;
+                }
+                &:nth-child(4) {
+                    flex: 1.6;
+                }
+                &:nth-child(5) {
+                    flex: 0.9;
+                }
+                &:nth-child(6) {
+                    flex: 1;
+                }
+                &:nth-child(7) {
+                    flex: 0.5;
+                }
+                &:nth-child(8) {
+                    flex: 0.7;
+                }
+                &:nth-child(9) {
+                    flex: 0.3;
+                }
+            }
+        }
+
+        .UserCards {
+            flex: 1;
+            width: 100%;
+            overflow-y: scroll;
+
+            @supports (-moz-appearance: none) {
+                scrollbar-width: thin;
+                scrollbar-color: var(--c23) transparent;
+            }
+
+            &::-webkit-scrollbar {
+                width: 0.2rem;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border-radius: 1rem;
+                background: var(--c23);
+            }
+
+            h1 {
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 10rem;
+            }
+
+            .Card {
+                width: 100%;
+                height: 5rem;
+                border-bottom: 1px solid var(--bg15);
+                display: flex;
+                align-items: center;
+                padding-left: 1rem;
+                transition: background 0.5s;
+                &:hover {
+                    background: var(--c14);
+                }
+
+                .Profile {
+                    display: flex;
+                    align-items: center;
+                    // justify-content: flex-start;
+                    justify-content: center;
+                    gap: 0.4rem;
+                    // p{
+                    //     padding-left: 3rem;
+                    // }
+
+                    img {
+                        width: 1.82225rem;
+                        height: 1.82225rem;
+                        border-radius: 50%;
+                    }
+                }
+
+                .More {
+                    cursor: pointer;
+                    span {
+                        display: flex;
+                        width: 2.5rem;
+                        height: 2.5rem;
+                        padding: 0.5rem;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 4.875rem;
+                        background: var(--bg16);
+                    }
+                }
+
+                div {
+                    color: var(--c16);
+                    font-family: var(--f1);
+                    font-size: 0.875rem;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.25rem; /* 142.857% */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    overflow: hidden;
+
+                    &:nth-child(1) {
+                        flex: 0.2;
+                    }
+                    &:nth-child(2) {
+                        flex: 1.5;
+                    }
+                    &:nth-child(3) {
+                        flex: 0.6;
+                    }
+                    &:nth-child(4) {
+                        flex: 1.6;
+                    }
+                    &:nth-child(5) {
+                        flex: 0.9;
+                    }
+                    &:nth-child(6) {
+                        flex: 1;
+                    }
+                    &:nth-child(7) {
+                        flex: 0.5;
+                    }
+                    &:nth-child(8) {
+                        flex: 0.7;
+                    }
+                    &:nth-child(9) {
+                        flex: 0.3;
+                    }
+                }
+            }
+        }
+    }
+
+    .pagination {
+        display: flex;
+        width: 100%;
+        padding: 1.5rem;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 0rem 0rem 0.5rem 0.5rem;
+        background: var(--bg1);
+
+        .records {
+            color: var(--c17);
+            font-family: var(--f1);
+            font-size: 0.875rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.3125rem; /* 150% */
+        }
+
+        .pageButtons {
+            display: flex;
+
+            .leftArrow,
+            .rightArrow {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 3.13rem;
+                height: 3.13rem;
+                border-radius: 6.25rem;
+                background: var(--bg17);
+                cursor: pointer;
+                border: none;
+
+                svg {
+                    width: 1.25rem;
+                    height: 1.25rem;
+                }
+
+                &:disabled {
+                    cursor: no-drop;
+                    visibility: hidden;
+                }
+            }
+
+            .pages {
+                display: flex;
+                align-items: center;
+                margin: 0 0.5rem;
+
+                .buttons {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 3.13rem;
+                    width: 3.13rem;
+                    color: var(--c18);
+                    text-align: center;
+                    font-family: var(--f1);
+                    font-size: 0.875rem;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 1.25rem; /* 142.857% */
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+
+                .active {
+                    background: var(--lg7);
+
+                    color: var(--c2);
+                }
+            }
+        }
+    }
+}

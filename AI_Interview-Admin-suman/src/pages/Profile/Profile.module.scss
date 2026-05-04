@@ -1,0 +1,163 @@
+.ManageUsers {
+    width: 100%;
+    height: 100%;
+    // border-radius: 1.875rem 1.875rem 0rem 0rem;
+    background: var(--bg1);
+    backdrop-filter: blur(25px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    .Top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 5rem;
+        width: 100%;
+        padding: 0 2rem;
+
+        .Buttons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            button {
+                display: flex;
+                padding: 0rem 1.40769rem;
+                justify-content: center;
+                align-items: center;
+                gap: 0.46925rem;
+                border-radius: 9.38463rem;
+                background: var(--bg2);
+                color: var(--c14);
+                font-family: var(--f1);
+                font-size: 0.82113rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 2.34613rem; /* 285.714% */
+                text-transform: capitalize;
+                border: none;
+                cursor: pointer;
+
+                &.active {
+                    border-radius: 9.38463rem;
+                    background: var(--Buttons, linear-gradient(97deg, #00ffd1, #6c63ff));
+
+                    color: var(--c2);
+                }
+            }
+        }
+
+        .Filters {
+            display: flex;
+            padding: 0.51238rem 1.02475rem;
+            justify-content: center;
+            align-items: center;
+            gap: 0.6405rem;
+            border-radius: 0.25619rem;
+            background: var(--c15);
+            p {
+                color: var(--c11);
+                font-family: var(--f1);
+                font-size: 0.89669rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 140%; /* 1.25531rem */
+            }
+            svg {
+                width: 1.02475rem;
+                height: 1.02475rem;
+            }
+        }
+    }
+
+    .Bottom {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+        button {
+            width: 100%;
+            display: flex;
+            padding: 0.5rem 1rem;
+            justify-content: center;
+            align-items: center;
+            gap: 0.46925rem;
+            border-radius: 9.38463rem;
+            background: var(--bg2);
+            color: var(--c2);
+            font-family: var(--f1);
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 400;
+
+            text-transform: capitalize;
+            border: none;
+            cursor: pointer;
+            background: var(--Buttons, linear-gradient(97deg, #00ffd1, #6c63ff));
+            transition: all 0.3s;
+            &:hover {
+                transform: scale(0.97);
+            }
+            &:disabled{
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+        }
+        .InputWrapper {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            label {
+                width: 13rem;
+                color: var(--c16);
+                font-family: var(--f1);
+                font-size: 0.875rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.25rem; /* 142.857% */
+            }
+
+            .Input {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                border: 1px solid var(--c3);
+                border-radius: 0.5rem;
+                outline: none;
+                padding: 0.5rem;
+                background: transparent;
+                color: var(--c3);
+
+                input {
+                    width: 100%;
+                    border: none;
+
+                    outline: none;
+
+                    background: transparent;
+                    color: var(--c3);
+                }
+            }
+        }
+        .Profile,
+        .Password {
+            padding: 1.5rem 1rem;
+            border-radius: 1rem;
+            background: var(--bg2);
+
+            .info{
+                text-align: center;
+                margin-bottom: 1rem;
+                color: var(--c16);
+                font-family: var(--f1);
+                font-size: 0.875rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.25rem;
+            }
+        }
+    }
+}

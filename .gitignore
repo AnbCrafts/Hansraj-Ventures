@@ -1,0 +1,14 @@
+﻿node_modules/
+venv/
+env/
+.venv/
+dist/
+build/
+.env
+*.env
+.env.local
+.vscode/
+.idea/
+*.mjs
+*.pyc
+__pycache__/

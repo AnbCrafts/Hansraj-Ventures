@@ -1,0 +1,388 @@
+// index.scss
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Imperial+Script&family=Inter:wght@100..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    //scroll-behavior: smooth;
+}
+
+body.dark-mode {
+    --c1: black;
+    --c2: #fff;
+    --c3: #898989;
+}
+
+html,
+body {
+    height: 100%;
+    overflow-y: auto; // Allow vertical scroll
+}
+html {
+    color-scheme: dark; // <-- SOLUTION 1: Fixes the suggestion dropdown
+    // scroll-behavior: smooth;
+}
+
+// remove scrollbar from body
+* {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+*::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="month"]::-webkit-calendar-picker-indicator,
+input[type="week"]::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: 1px solid #959fa3;
+    -webkit-text-fill-color: rgb(255, 255, 255);
+    -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.03) inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.Toastify {
+    position: absolute;
+    z-index: 99999;
+    font-size: 16px;
+}
+
+textarea {
+    overflow-y: scroll;
+    @supports (-moz-appearance: none) {
+        scrollbar-width: thin;
+        scrollbar-color: var(--c38) transparent;
+    }
+
+    &::-webkit-scrollbar {
+        width: 0.3rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background: var(--c38);
+    }
+}
+
+#root {
+    width: 100dvw;
+    min-height: 100dvh;
+    overflow: auto;
+    background: var(--WHITE);
+    overflow-y: auto;
+}
+
+.main-container {
+    overflow-y: auto;
+    max-height: 100vh;
+}
+
+.disabledBtn {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+// 60,40,30,18
+
+:root {
+    --f1: "Public Sans", sans-serif;
+    --f2: "Inter", sans-serif;
+    --f3: "DM Sans", sans-serif;
+    --f4: "Lato", sans-serif;
+    --f5: "Poppins", sans-serif;
+    --f6: "Josefin Sans", sans-serif;
+    --f7: "Roboto";
+    --f8: "Montserrat";
+    --f9: "ADLaM Display", serif;
+    --f10: "Caveat", cursive;
+    --f11: "Plus Jakarta Sans", sans-serif;
+
+    --h0: 8rem;
+    --h1: 6rem;
+    --h1a: 5.5rem;
+    --h2: 5rem;
+    --h2a: 4.5rem;
+    --h3: 4rem;
+    --h3a: 3.5rem;
+    --h4: 3rem;
+    --h5: 2.75rem;
+    --h6: 2.5rem;
+    --h7: 2.25rem;
+    --h8: 2rem;
+    --h9: 1.5rem;
+    --h9a: 1.6rem;
+    --h10: 1.2rem;
+    --h10a: 1.35rem;
+    --h10b: 1.75rem;
+    --h10c: 1.15rem;
+    --h11: 1rem;
+    --h12: 0.875rem;
+    --h13: 0.5rem;
+
+    --backBg2: rgba(246, 246, 246, 1);
+    --backBg3: rgba(250, 250, 250, 1);
+    --backBg4: rgba(127, 198, 164, 1);
+
+    --headerBoxShadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    --vacanyCardBoxShadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    --vacanyCardBoxShadow2: 0px 2px 4px rgba(255, 255, 255, 0.75);
+    --downloadBtnBoxShadow: 0px 4px 8px rgba(0, 0, 0, 0.5), 0px 8px 16px rgba(0, 0, 0, 0.3);
+    --blurbg1: rgba(0, 0, 0, 0.4);
+
+    --BLACK: #000000;
+    --WHITE: #ffffff;
+    --c1h: #191d23;
+    --c1h2: #181920;
+    --c2: #0f172a;
+    --c3: #8a8a8a;
+    --c4: rgba(72, 72, 72, 1);
+    --c5: #d1d5db;
+    --c6: rgba(194, 194, 194, 1);
+    --c7: #d1d1d1;
+    --c8: #6beba4;
+    --c9: rgba(38, 102, 99, 0.2);
+    --c10: #ff6b35;
+    --c11: rgba(102, 38, 38, 0.2);
+    --c12: #6f6beb;
+    --c13: rgba(38, 42, 102, 0.2);
+    --c14: rgba(255, 255, 255, 0.05);
+    --c14a: rgba(255, 255, 255, 0.02);
+    --c14b: rgba(255, 255, 255, 0.03);
+    --c14c: rgba(255, 255, 255, 0.1);
+    --c15: #666;
+    --c16: #00a237;
+    --c17: #f27a23;
+    --c18: #0c35c8;
+    --c19: #fd0101;
+    --c20: #51e7c8;
+    --c21: #00a237;
+    --c22: #999;
+    --c23: #dbdbdb;
+    --c24: #fb3838;
+    --c25: #2ffc44;
+    --c26: #d7d7d7;
+    --c27: #959fa3;
+    --c28: #5fe6f8;
+    --c29: #0d0d13;
+    --c30: rgba(255, 7, 7, 0.12);
+    --c30a: rgba(245, 246, 247, 0.02);
+    --c31: rgba(99, 99, 99, 0.173);
+    --c31a: rgba(99, 99, 99, 0.4);
+    --c32: rgba(94, 96, 113, 1);
+    --c33: #e84646;
+    --c34: rgba(229, 231, 232, 0);
+    --c35: rgba(88, 250, 221, 0.1);
+    --c36: rgba(0, 0, 0, 0.51);
+    --c37: rgba(86, 87, 122, 0.3);
+    --c38: #0084ff;
+    --c39: #393939;
+    --c40: #369fff;
+    --c41: #7ec522;
+
+    --c42: rgba(33, 213, 232, 0.05);
+    --c43: rgba(0, 201, 255, 0.1);
+    --c44: #00ad45;
+    --c45: rgba(32, 157, 163, 0.1);
+    --c46: #209da3;
+    --c47: #2e2021;
+    --c48: #f55725;
+    --c49: rgba(0, 173, 69, 0.2);
+    --c50: rgba(255, 186, 0, 0.1);
+    --c51: #ffba00;
+    --c52: rgba(217, 217, 217, 0.02);
+    --c53: #1c1d23;
+    --c54: rgba(255, 255, 255, 0.01);
+    --c55: #23242b;
+    --c56: #c4c4c4;
+    --c57: #1b1c23;
+    --c58: rgba(209, 209, 209, 0.7);
+    --c59: rgba(255, 255, 255, 0.56);
+    --c60: #d6d6d6;
+    --c61: rgba(255, 255, 255, 0.7);
+    --c62: rgba(255, 255, 255, 0.3);
+    --c63: rgba(255, 255, 255, 0.6);
+    --c64: rgba(255, 255, 255, 0.76);
+    --c65: rgba(0, 0, 0, 0.5);
+    --c66: #209da3;
+    --c67: rgba(159, 159, 159, 0.05);
+    --c68: rgba(196, 196, 196, 0.02);
+    --c69: #2dce89;
+    --c70: rgba(13, 13, 13, 0.5);
+    --c71: linear-gradient(97deg, #d1d1d1 9.79%, #fff 236.98%);
+    --c72: linear-gradient(103deg, #92fe9c 2.55%, #00c9ff 99.78%);
+    --c73: #92fe9c;
+    --c74: linear-gradient(103deg, rgba(146, 254, 156, 0.1) 2.55%, rgba(0, 201, 255, 0.1) 99.78%);
+    --c75: rgba(209, 209, 209, 0.5);
+    --c76: rgba(98, 98, 98, 0.1);
+    --c77: #1d1e25;
+    --c78: #a0aec0;
+    --c79: #92ff9d;
+    --c80: #14ca74;
+    --c81: #fabb18;
+    --c82: linear-gradient(127deg, rgba(13, 23, 79, 0.94) 19.41%, rgba(45, 68, 168, 0.49) 76.65%);
+    --c83: rgba(255, 255, 255, 0.2);
+    --c84: #f8f8f8;
+    --c85: rgba(245, 87, 37, 0.1);
+    --c86: #3d413f;
+    --c87: rgba(102, 102, 102, 0.2);
+    --c88: rgba(255, 255, 255, 0.04);
+    --c89: #aeb9e1;
+    --c90: rgba(13, 13, 13, 0.9);
+    --c91: #626c70;
+    --c92: #eee;
+    --c93: #7b878c;
+    --c94: rgba(209, 209, 209, 0.5);
+
+    --svgColor: rgba(0, 71, 67, 1);
+
+    --shadow1: 0 10px 25px rgba(255, 255, 255, 0.1);
+
+    --primary: #00ffd1;
+    --secondary: #6c63ff;
+    --heading: #042a2d;
+
+    --btn: linear-gradient(90deg, #00ffd1, #6c63ff);
+    --bgN1: #ffffff;
+    --bg1: linear-gradient(90deg, #ff6b35, #ff8e53);
+    --bg2: linear-gradient(180deg, #0a0a0a, #1a1a2e);
+    --bg3: linear-gradient(0deg, #0a0a0a, #1a1a2e);
+    --bg4: linear-gradient(90deg, #95ffa0 0%, #00c9ff 100%, #00c9ff 100%), linear-gradient(97deg, #8f00ff 9.79%, #fff 236.98%);
+    --bg5: linear-gradient(103deg, rgba(146, 255, 157, 0.3) 2.55%, rgba(0, 201, 255, 0.3) 99.78%);
+    --bg6: linear-gradient(179deg, rgba(0, 2, 3, 0) 4.84%, #000203 98.92%);
+    --bg7: linear-gradient(90deg, rgba(149, 255, 160, 0.7) 0%, rgba(0, 201, 255, 0.7) 100%, rgba(0, 201, 255, 0.7) 100%);
+    --bg8: linear-gradient(103deg, rgba(146, 255, 157, 0.08) 2.55%, rgba(0, 201, 255, 0.08) 99.78%);
+    --bg9: linear-gradient(90deg, rgba(147, 255, 158, 0.1) 0%, rgba(0, 201, 255, 0.1) 100%, rgba(0, 201, 255, 0.1) 100%);
+    --bg10: linear-gradient(90deg, rgba(147, 255, 158, 0.9) 0%, rgba(0, 201, 255, 0.9) 100%, rgba(0, 201, 255, 0.9) 100%);
+    --bg11: linear-gradient(0deg, #e33838 0%, #e33838 100%);
+    --bg12: linear-gradient(90deg, rgba(147, 255, 158, 0.1) 0%, rgba(0, 201, 255, 0.1) 100%, rgba(0, 201, 255, 0.1) 100%);
+    --bg13: linear-gradient(90deg, rgba(147, 255, 158, 0.05) 0%, rgba(0, 201, 255, 0.05) 100%, rgba(0, 201, 255, 0.05) 100%);
+    --bg14: linear-gradient(90deg, #44ff9a -0.55%, #44b0ff 22.86%, #8b44ff 48.36%, #f64 73.33%, #ebff70 99.34%);
+    --bg15: linear-gradient(103deg, rgba(146, 255, 157, 0.05) 2.55%, rgba(0, 201, 255, 0.05) 99.78%);
+    --bg16: linear-gradient(180deg, #3cdbd1 0%, #00c9ff 100%);
+    --bg17: linear-gradient(127deg, #9b9b9b -21.67%, #000 45.1%);
+    --bg18: linear-gradient(165.85deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+    --bg19: linear-gradient(165.85deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+    --Vector: linear-gradient(103deg, #92ff9d 2.55%, #00c9ff 99.78%);
+    --gradient1: linear-gradient(103deg, rgba(146, 255, 157, 0.1) 2.55%, rgba(0, 201, 255, 0.1) 99.78%);
+    --btn2: linear-gradient(165.85deg, rgba(255, 255, 255, 0.175) 0%, rgba(255, 255, 255, 0) 100%);
+    --Vector2: rgba(255, 255, 255, 0.7);
+    --boxShadow1: 0 0 10px var(--c35), 0 0 20px var(--c35), 0 0 30px var(--c35);
+    --boxShadow4: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    --boxShadow3: 0px 106px 30px 0px rgba(0, 0, 0, 0), 0px 68px 27px 0px rgba(0, 0, 0, 0.01), 0px 38px 23px 0px rgba(0, 0, 0, 0.05),
+        0px 17px 17px 0px rgba(0, 0, 0, 0.09), 0px 4px 9px 0px rgba(0, 0, 0, 0.1);
+    --dropShadow1: drop-shadow(0 0 10px var(--c35)) drop-shadow(0 0 20px var(--c35)) drop-shadow(0 0 30px var(--c35));
+
+    --Base_Font_Size: 100%;
+    font-size: var(--Base_Font_Size);
+}
+
+.ele {
+    position: fixed;
+    pointer-events: none;
+    width: 10px;
+    height: 10px;
+    transition: 1s;
+    font-size: 22px;
+    color: #fff;
+    filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 15px #0f0) hue-rotate(60deg);
+    z-index: 10;
+}
+
+@media screen and (max-width: 1728px) {
+    :root {
+        --Base_Font_Size: 85%;
+        font-size: var(--Base_Font_Size);
+    }
+}
+@media screen and (max-width: 1600px) {
+    :root {
+        --Base_Font_Size: 80%;
+        font-size: var(--Base_Font_Size);
+    }
+}
+@media screen and (max-width: 1500px) {
+    :root {
+        --Base_Font_Size: 75%;
+        font-size: var(--Base_Font_Size);
+    }
+}
+@media screen and (max-width: 1400px) {
+    :root {
+        --Base_Font_Size: 70%;
+        font-size: var(--Base_Font_Size);
+    }
+}
+@media screen and (max-width: 1366px) {
+    :root {
+        --Base_Font_Size: 65%;
+        font-size: var(--Base_Font_Size);
+    }
+}
+@media screen and (max-width: 1250px) {
+    :root {
+        --Base_Font_Size: 55%;
+        font-size: var(--Base_Font_Size);
+    }
+}
+@media screen and (max-width: 1150px) {
+    :root {
+        --Base_Font_Size: 57%;
+        font-size: var(--Base_Font_Size);
+    }
+}
+@media screen and (max-width: 1024px) {
+    :root {
+        --Base_Font_Size: 52%;
+        font-size: var(--Base_Font_Size);
+    }
+}
+@media screen and (max-width: 900px) {
+    :root {
+        --Base_Font_Size: 50%;
+        font-size: var(--Base_Font_Size);
+    }
+}
+@media screen and (max-width: 800px) {
+    :root {
+        --Base_Font_Size: 60%;
+        font-size: var(--Base_Font_Size);
+    }
+}
+
+@media screen and (max-width: 631px) {
+    :root {
+        --Base_Font_Size: 47%;
+        font-size: var(--Base_Font_Size);
+    }
+}
